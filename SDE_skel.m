@@ -18,7 +18,7 @@ function SDE_skel_std()
  
 
 %Specify location of data
-misc.data_id = 'samples/ftrack_data';
+misc.data_id = 'samples/ftrack';
 
 data_path = [misc.data_id,'.txt'];
 
