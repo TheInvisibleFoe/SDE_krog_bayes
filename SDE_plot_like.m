@@ -1,16 +1,14 @@
-function param_inf()
+function SDE_plot_like()
 
-output = importdata('~/Dropbox/bayesspt/SDE/code/samples/newnoise_output.mat');
+output = importdata('~/Dropbox/bayesspt/SDE/code/samples/noisetrack_output.mat');
 %output = importdata('~/Dropbox/bayesspt/SDE/code/samples/ftrack_output.mat');
 for i = 1:4
     theta(i) = output(3).param_mean(i);
 end
 theta
 l_size = 16;
-%disp(theta)
-%theta = [0.2 1 0 2];
 %track = importdata('~/Dropbox/bayesspt/SDE/code/samples/ftrack.mat');
-track = importdata('~/Dropbox/bayesspt/SDE/code/samples/newnoise.mat');
+track = importdata('~/Dropbox/bayesspt/SDE/code/samples/noisetrack.mat');
 
 obs = track.obs;
 clean = track.clean;
@@ -46,7 +44,6 @@ line([-0. -0.],[0 1],'Color',[0 0.6 0],'Linewidth',1,'LineStyle','--');
 ax2.XTick = [-1 -0.5 0 0.5 1];
 grid on
 xlabel('$f$','Interpreter','latex','FontSize',l_size)
-%ylabel('$P(\text{data}|\mathpmb{\theta})$','Interpreter','latex','Rotation',0,'FontSize',14)
 ylabel('$P(data|\theta)$','Interpreter','latex','Rotation',90,'FontSize',l_size)
 text(-0.95,2.6,'Normalized likelihood','Interpreter','latex','FontSize',l_size+2)
 text(-6.2,2.6,'Simulated data','Interpreter','latex','FontSize',l_size+2)
@@ -99,5 +96,4 @@ ax5.FontSize=l_size-4;
 fig=gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 14/2 10/2];
-print('~/Dropbox/bayesspt/SDE/draft/samplefig_noise','-depsc')
-%print('../draft/samplefig','-depsc')
+print('~samples/samplefig_noise','-depsc')
