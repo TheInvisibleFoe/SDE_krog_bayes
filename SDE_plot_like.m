@@ -1,14 +1,18 @@
 function SDE_plot_like()
 
-output = importdata('~/Dropbox/bayesspt/SDE/code/samples/noisetrack_output.mat');
-%output = importdata('~/Dropbox/bayesspt/SDE/code/samples/ftrack_output.mat');
-for i = 1:4
-    theta(i) = output(3).param_mean(i);
+output = importdata('samples/noisetrack_output.mat');
+%output = importdata('samples/ftrack_output.mat');
+
+model = 3;
+MM = [0 0; 1 0; 0 1; 1 1];
+for i = 1:length(output.results(model).param_mean)
+    theta(i) = output.results(model).param_mean(i);
 end
+theta = SDE_params(theta,MM(model,:));
 theta
 l_size = 16;
-%track = importdata('~/Dropbox/bayesspt/SDE/code/samples/ftrack.mat');
-track = importdata('~/Dropbox/bayesspt/SDE/code/samples/noisetrack.mat');
+%track = importdata('samples/ftrack.mat');
+track = importdata('samples/noisetrack.mat');
 
 obs = track.obs;
 clean = track.clean;
@@ -96,4 +100,4 @@ ax5.FontSize=l_size-4;
 fig=gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 14/2 10/2];
-print('~samples/samplefig_noise','-depsc')
+%print('samples/samplefig_noise','-depsc')

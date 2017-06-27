@@ -56,7 +56,7 @@ end
 figure(3);
 inp = scatter(H_star(:,1),ones(1,track_max),'d');
 hold on
-scatter(H_ref(:,1),ones(1,track_max) + 0.1,'Black','x')
+%scatter(H_ref(:,1),ones(1,track_max) + 0.1,'Black','x')
 txt = sprintf('$p(H^* > H) =  %.2f$',prob(1));
 text(80,1,txt,'Interpreter','Latex','FontSize',l_size)
 title('Information per step for scaled tracks','Interpreter','Latex','FontSize',l_size)
@@ -78,7 +78,7 @@ text(DH + 13*dh,n_max + .7,'($f = 0$)','Interpreter','Latex','FontSize',l_size)
 scatter(data.results(best).H(1) - 0.1,1,700,'Black','x','Linewidth',3)
 for n = 2:n_max + 2 
     scatter(H_star(:,n),n * ones(1,track_max) - 0.1 ,'d')
-    scatter(H_ref(:,n),n * ones(1,track_max) + 0.1,'Black','x')
+%    scatter(H_ref(:,n),n * ones(1,track_max) + 0.1,'Black','x')
     scatter(data.results(best).H(n),n,700,'Black','x','Linewidth',3)
     txt = sprintf('$p(H^* > H) =  %.2f$',prob(n));
 text(80,n,txt,'Interpreter','Latex','FontSize',l_size)
