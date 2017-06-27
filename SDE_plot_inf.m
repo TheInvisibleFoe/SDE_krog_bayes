@@ -1,6 +1,6 @@
 function SDE_plot_inf()
 
-data = importdata('samples/ftrack_data_output.mat');
+data = importdata('samples/ftrack_output.mat');
 track_max = 100;
 n_max = 7; %data.n_max;
 savepath = 'samples/inf_free';
