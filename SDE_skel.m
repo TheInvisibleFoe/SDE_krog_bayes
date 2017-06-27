@@ -1,4 +1,4 @@
-function SDE_skel_std()
+function SDE_skel()
 
 % This skeleton file loads the data specified by the 'misc.data_id' parameter
 % and initiates Bayesian data analysis via the Nested sampling algorithm.
