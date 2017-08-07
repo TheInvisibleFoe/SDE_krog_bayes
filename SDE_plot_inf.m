@@ -81,13 +81,11 @@ scatter(DH-1,N + 1.2,'d')
 text(DH + 4*dh,N + 1.2,'Simulated tracks ','Interpreter','Latex','FontSize',l_size)
 text(DH + 13*dh,N + .7,'($\sigma_{mn} \neq 0$)','Interpreter','Latex','FontSize',l_size)
 scatter(mean(H_ref(:,1)),1,700,'Black','x','LineWidth',2)
-scatter(data.results(best).H(1),1,700,'Red','o','Linewidth',3)
 for n = 2:N;
     n2 = nlist(n); 
     scatter(H_star(:,n),n2 * ones(1,track_max) - 0. ,'d')
     scatter(H_ref(:,n),n2 * ones(1,track_max) + 0.3,'Black','x')
     scatter(mean(H_ref(:,n)),n2,700,'Black','x','LineWidth',2)
-    scatter(data.results(best).H(n),n2,700,'Red','o','Linewidth',3)
     txt = sprintf('$p(h^* > h) =  %.2f$',prob(n));
 text(80,n2,txt,'Interpreter','Latex','FontSize',l_size)
 end

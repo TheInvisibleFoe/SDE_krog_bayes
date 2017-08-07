@@ -100,4 +100,4 @@ ax5.FontSize=l_size-4;
 fig=gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 14/2 10/2];
-print('../draft/samplefig_noisy','-depsc')
+%print('../draft/samplefig_noisy','-depsc')
