@@ -8,6 +8,8 @@ data_path = [misc.data_id,'.txt'];
 %load data 
 
 data = importdata(data_path);
+%data = data.obs; % Uncomment this if running on noisetrack.mat or
+                  % largenoisetrack.mat
 
 %Specify prior ranges
 Dmin=10^(-4);
@@ -48,7 +50,7 @@ final=@(x) x(end); % extract last element in a vector
 %Specify the models
 MM = [0 0; 1 0; 0 1; 1 1];
 n_perm = 2; % Number of permanently active parameters
-for i=1:size(MM,1);
+for i=1:size(MM,1)
   models(i).options=options;
   models(i).genu=@() SDE_generate_u(sum(MM(i,:))+n_perm);
   models(i).logl=@(obs,theta) SDE_logl(obs,SDE_params(theta,MM(i,:)));
@@ -57,7 +59,7 @@ for i=1:size(MM,1);
   models(i).replicate =@(obs,theta,n) SDE_replicate(obs,SDE_params(theta,MM(i,:)),n);
   models(i).invprior=@(u) SDE_invprior(u,ranges,MM(i,:));
   models(i).labels=[1:n_perm];
-  for j=1:length(MM(i,:));
+  for j=1:length(MM(i,:))
     if MM(i,j)==1
       models(i).labels=[models(i).labels j+n_perm];
     end

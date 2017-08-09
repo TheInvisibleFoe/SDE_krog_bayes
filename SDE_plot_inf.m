@@ -11,12 +11,12 @@ for i = 1:4
     %evi(i) = data(i).Z_norm;
 end
 %[~,best] = max(evi);
-best = 4;
+best = 2;
 
 MM = [0 0; 1 0; 0 1; 1 1];
 fprintf('\nInformation for model %i: %2.3f \n',best,data.results(best).H(1))
 
-N = length(nlist);
+N = 7;%length(nlist);
 H_star = zeros(track_max,N);
 H_ref = zeros(track_max,N);
 prob = zeros(1,N);
@@ -62,13 +62,14 @@ end
 figure(3);
 scatter(H_star(:,1),ones(1,track_max),'d');
 hold on
-scatter(H_ref(:,1),ones(1,track_max) + 0.3,'Black','x')
+%scatter(H_ref(:,1),ones(1,track_max) + 0.3,'Black','x')
 txt = sprintf('$p(h^* > h) =  %.2f$',prob(1));
 text(80,1,txt,'Interpreter','Latex','FontSize',l_size)
 title('Information per step for scaled tracks','Interpreter','Latex','FontSize',l_size)
 ylabel('$n$','Interpreter','Latex','FontSize',l_size,'Rotation',0)
 DH = -130;
 dh = 1.4;
+N = N-2;
 scatter(DH-1,N + 2,700,'Black','x','Linewidth',2)
 text(DH + 4*dh,N + 2,'Mean for scaled data ','Interpreter','Latex','FontSize',l_size)
 scatter(DH-1.0 - dh,N + 1,'d')
@@ -79,22 +80,23 @@ scatter(DH-1 + 2*dh,N + 1.2,'d')
 scatter(DH-1 - dh,N + 1.4,'d')
 scatter(DH-1,N + 1.2,'d')
 text(DH + 4*dh,N + 1.2,'Simulated tracks ','Interpreter','Latex','FontSize',l_size)
-text(DH + 13*dh,N + .7,'($\sigma_{mn} \neq 0$)','Interpreter','Latex','FontSize',l_size)
+text(DH + 13*dh,N + .7,'($f \neq 0$)','Interpreter','Latex','FontSize',l_size)
 scatter(mean(H_ref(:,1)),1,700,'Black','x','LineWidth',2)
-for n = 2:N;
+N = N + 2;
+for n = 2:N
     n2 = nlist(n); 
     scatter(H_star(:,n),n2 * ones(1,track_max) - 0. ,'d')
-    scatter(H_ref(:,n),n2 * ones(1,track_max) + 0.3,'Black','x')
+    %scatter(H_ref(:,n),n2 * ones(1,track_max) + 0.3,'Black','x')
     scatter(mean(H_ref(:,n)),n2,700,'Black','x','LineWidth',2)
     txt = sprintf('$p(h^* > h) =  %.2f$',prob(n));
 text(80,n2,txt,'Interpreter','Latex','FontSize',l_size)
 end
-ylim([0 N+3])
+ylim([0 N+0.99])
 xlim([-150 155])
 xt = get(gca, 'XTick');
 set(gca, 'FontSize', l_size)
 hold off
-%print(savepath,'-depsc');
+print(savepath,'-depsc');
 
     
 

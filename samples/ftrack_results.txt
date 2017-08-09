@@ -1,41 +1,41 @@
-Highest evidence for Model 2 (probability 0.887). 
+Highest evidence for Model 2 (probability 0.916). 
 
-Model 1 (probability 0.110):
-Estimated value for log10-evidence: -82.646 +/- 0.059.
+Model 1 (probability 0.081):
+Estimated value for log10-evidence: -82.838 +/- 0.061.
 Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-Step deviation:  0.110    0.136    0.168    0.211    0.279    0.166    0.174   +/- 0.040   
-Exponent:        0.841    0.944    1.036    1.120    1.223    1.036    1.034   +/- 0.092   
+Step deviation:  0.108    0.138    0.169    0.212    0.284    0.166    0.176   +/- 0.042   
+Exponent:        0.836    0.946    1.034    1.127    1.221    1.036    1.034   +/- 0.093   
 log10-Maximal likelihood: -79.854
-Scaling n:  1     2     3     4     5     6     7     8     9     
-p-value:    0     0     0     0     0.05  0.01  0.01  0     0.01  
-
-Model 2 (probability 0.887):
-Estimated value for log10-evidence: -81.740 +/- 0.068.
-Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-Step deviation:  0.109    0.137    0.170    0.209    0.272    0.167    0.174   +/- 0.040   
-Exponent:        0.813    0.911    0.996    1.091    1.202    1.004    0.999   +/- 0.094   
-Force:          -0.495   -0.377   -0.273   -0.178   -0.076   -0.273   -0.276   +/- 0.100   
-log10-Maximal likelihood: -77.922
-Scaling n:  1     2     3     4     5     6     7     8     9     
-p-value:    0.46  0.42  0.32  0.28  0.58  0.35  0.23  0.20  0.30  
-
-Model 3 (probability 0.000):
-Estimated value for log10-evidence: -85.569 +/- 0.085.
-Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-Step deviation:  0.058    0.101    0.140    0.184    0.226    0.142    0.141   +/- 0.043   
-Exponent:        0.870    0.982    1.074    1.242    1.407    1.086    1.102   +/- 0.133   
-Measurem. err.:  2.4e-03  0.018    0.055    0.117    0.231    0.026    0.069   +/- 0.058   
-log10-Maximal likelihood: -79.745
 Scaling n:  1     2     3     4     5     6     7     8     9     
 p-value:    0     0     0     0     0     0     0     0     0     
 
-Model 4 (probability 0.003):
-Estimated value for log10-evidence: -84.247 +/- 0.089.
+Model 2 (probability 0.916):
+Estimated value for log10-evidence: -81.786 +/- 0.068.
 Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-Step deviation:  0.069    0.092    0.113    0.170    0.232    0.143    0.124   +/- 0.039   
-Exponent:        0.878    1.004    1.136    1.217    1.358    1.055    1.120   +/- 0.113   
-Force:          -0.477   -0.378   -0.235   -0.186   -0.089   -0.272   -0.266   +/- 0.104   
-Measurem. err.:  4.2e-03  0.023    0.066    0.129    0.241    0.026    0.078   +/- 0.059   
-log10-Maximal likelihood: -77.813
+Step deviation:  0.113    0.136    0.168    0.211    0.274    0.167    0.175   +/- 0.040   
+Exponent:        0.805    0.906    1.004    1.095    1.185    1.004    1.002   +/- 0.093   
+Force:          -0.489   -0.369   -0.272   -0.172   -0.083   -0.273   -0.272   +/- 0.099   
+log10-Maximal likelihood: -77.922
 Scaling n:  1     2     3     4     5     6     7     8     9     
-p-value:    0.31  0.37  0.32  0.28  0.60  0.32  0.36  0.26  0.31  
+p-value:    0.42  0.45  0.33  0.28  0.67  0.37  0.23  0.25  0.39  
+
+Model 3 (probability 0.000):
+Estimated value for log10-evidence: -85.477 +/- 0.085.
+Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+Step deviation:  0.066    0.088    0.111    0.161    0.215    0.142    0.122   +/- 0.038   
+Exponent:        0.922    1.051    1.173    1.277    1.400    1.086    1.165   +/- 0.112   
+Measurem. err.:  4.5e-03  0.026    0.066    0.127    0.231    0.026    0.077   +/- 0.057   
+log10-Maximal likelihood: -79.745
+Scaling n:  1     2     3     4     5     6     7     8     9     
+p-value:    0     0.01  0     0     0.06  0.02  0.01  0     0.01  
+
+Model 4 (probability 0.002):
+Estimated value for log10-evidence: -84.401 +/- 0.091.
+Percentile at:   0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+Step deviation:  0.068    0.103    0.145    0.181    0.232    0.141    0.143   +/- 0.039   
+Exponent:        0.838    0.961    1.048    1.147    1.308    1.065    1.056   +/- 0.107   
+Force:          -0.499   -0.360   -0.291   -0.191   -0.115   -0.257   -0.286   +/- 0.095   
+Measurem. err.:  3.1e-03  0.019    0.055    0.120    0.236    0.026    0.070   +/- 0.060   
+log10-Maximal likelihood: -77.819
+Scaling n:  1     2     3     4     5     6     7     8     9     
+p-value:    0.38  0.44  0.40  0.28  0.63  0.35  0.26  0.19  0.34  
