@@ -1,5 +1,49 @@
 function SDE_skel()
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+% This skeleton routine carries out Bayesian inference and
+% information content model checks for the data specified in
+% misc.data_id together with data path. A number of parameters
+% may be specified by the user:
+%
+%  - Dmin, Dmax, amin, amax, fmin, fmax, noisemin, and noisemax
+%    specify the minimum and maximum values of the four parameters   
+%    which model the dynamics, and must be chosen to ensure that 
+%    the most likely volume of parameter space is within these ranges.
+%
+%  - Tmin is the minimum length of a rescaled dataset to be used for
+%    for the information content check.
+%
+%  - options.nwalkers is the number of initial samples used in the
+%    nested sampling algorithm to sample parameter space.
+%
+%  - options.stoprat is the ratio between the last added evidence and the
+%    total samples evidence at which nested sampling will terminate.
+%
+%  - options.nsteps is the number steps attempted with the MCMC
+%    technique to generate a uniformly distributed sample from another sample.
+%
+%  - nlist is the list of rescalings used to carry out the information
+%    content check.
+%
+%  - trackmax is the number of tracks replicated for each scaling in the
+%    in the information content check.
+%
+%  - the "models" structure specify the functions used for likelihood calculation,
+%    sample generation, data rescaling, and data replication, which are specific 
+%    to the system of interest. To use the nested sampling framework on another system, 
+%    similar functions must exist and be specified in this structure.
+%
+% The routine outputs a .mat file with information on the user set parameters
+% as well as evidence estimations and inferred parameter means and the samples used.
+% In addition a .txt file is written, holding the conclusions of the analysis.
+% The routine writing this file takes the following inputs:
+%  - misc.percentiles are the percentiles used for the characterization of the
+%    posterier 
+%  - misc.labels are the labels assigned to each inferred parameter
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+
 %Specify location of data
 misc.data_id = 'samples/ftrack';
 
