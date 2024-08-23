@@ -3,7 +3,7 @@ function SDE_plot_inf()
 data = importdata('samples/ftrack_output.mat');
 track_max = 100;
 nlist = data.options.nlist;
-savepath = '../draft/inf_force';
+savepath = '/draft/inf_force';
 l_size = 16;
 
 % Find best model (choose one)

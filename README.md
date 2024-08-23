@@ -1,5 +1,11 @@
-###################################################################################
+---
+title : Readme
+---
 
+# Bayesian Inference and Model check
+
+
+============================================================================================
    This library holds software intended to be used for the analysis of data sets
    for processes governed by simple Stochastic Differential equation (SDE).
 
@@ -16,5 +22,5 @@
       "addpath('util')"
 
    in MatLab.
+============================================================================================
 
-###################################################################################
